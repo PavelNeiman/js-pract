@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
-    
+
 </head>
+
 <body id="body">
-    <div></div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="numbers__taker">
+                <label for="first"> Первое число:<input type="text" id="firstNum"> </label>
+
+                <label for="first"> Второе число:<input type="text" id="secondNum"> </label>
+            </div>
+
+            <div class="btn__container">
+                <button id="plus"> Сложить</button>
+                <button id="minus"> Вычесть</button>
+
+                <button id="multiply"> Перемножить</button>
+                <button id="division"> Разделить</button>
+            </div>
+
+            <div class="result__container">
+                <p id="result">Итого: </p>
+            </div>
+        </div>
+
+
+    </div>
 </body>
 <script src="main.js"></script>
+
 </html>

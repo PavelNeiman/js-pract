@@ -3,6 +3,31 @@ body{
 }
 
 div{
-    height: 150px;
-    background-color: green;
+    
+    background-color:grey;
+}
+/* 
+.wrapper{
+   max-width: 1200px;
+   margin: 0 auto;
+} */
+
+.wrapper{
+    display: block;
+    margin: 0 auto;
+    max-width:600px;
+}
+
+.container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn__container , .numbers__taker{
+    display: flex;
+    flex-flow:column nowrap ; 
+    
 }
