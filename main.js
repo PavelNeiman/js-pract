@@ -1,44 +1,48 @@
-// alert( "Привет" );
+var origBoard;
+const huPlayer = '0';
+const aiPlayer = 'X';
+const winCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [6, 4, 2]
+
+];
+
+const cells = document.querySelectorAll('.cell');
 
 
-var bodyColor = document.querySelector('div');
+// начало игры
+function startGame() {
 
-// btn's
-var plus = document.querySelector('#plus');
-var minus = document.querySelector('#minus');
-var multiply = document.querySelector('#multiply');
-var division = document.querySelector('#division');
-var resBlock = document.querySelector('#result');
-
-// numbers
-var firstNum = document.querySelector('#firstNum');
-var secondNum = document.querySelector('#secondNum');
+    document.querySelector('.endgame').style.display = "none";
+    origBoard = Array.from(Array(9).keys());
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].innerHTML = '';
+        cells[i].style.removeProperty('background-color');
+        cells[i].addEventListener('click', turnClick, false)
+    }
 
 
-// some functions
-bodyColor.onclick = function(){
-    bodyColor.style.backgroundColor = 'white';
 }
 
 
-// math functions
-plus.onclick = function(){
-    var result = parseInt(firstNum.value) + parseInt(secondNum.value);
-    resBlock.innerHTML = 'Итого: ' + result;
+//получаем клик игрока
+function turnClick(square) {
+    turn(square.target.id, huPlayer);
+    // console.log(square.target.id);
 }
 
-minus.onclick = function(){
-    var result = parseInt(firstNum.value) - parseInt(secondNum.value);
-    resBlock.innerHTML = 'Итого: ' + result;
+function turn(squareId, player) {
+    origBoard[squareId] = player;
+    document.getElementById(squareId).innerText = player;
+    
 }
 
-multiply.onclick = function(){
-    var result = parseInt(firstNum.value) * parseInt(secondNum.value);
-    resBlock.innerHTML = 'Итого: ' + result;
-}
 
-division.onclick = function(){
-    var result = parseInt(firstNum.value) / parseInt(secondNum.value);
-    resBlock.innerHTML = 'Итого: ' + result;
-}
-
+// 20:14
+// https://www.youtube.com/watch?v=P2TcQ3h0ipQ&index=6&list=PLWKjhJtqVAbleDe3_ZA8h3AO2rXar-q2V

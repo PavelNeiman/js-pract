@@ -5,35 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>tic tac</title>
     <link rel="stylesheet" href="main.css">
 
 </head>
-
-<body id="body">
-    <div class="wrapper">
-        <div class="container">
-            <div class="numbers__taker">
-                <label for="first"> Первое число:<input type="text" id="firstNum"> </label>
-
-                <label for="first"> Второе число:<input type="text" id="secondNum"> </label>
-            </div>
-
-            <div class="btn__container">
-                <button id="plus"> Сложить</button>
-                <button id="minus"> Вычесть</button>
-
-                <button id="multiply"> Перемножить</button>
-                <button id="division"> Разделить</button>
-            </div>
-
-            <div class="result__container">
-                <p id="result">Итого: </p>
-            </div>
-        </div>
-
-
+<body>
+    <table>
+        <tr>
+            <td class="cell" id="0"></td>
+            <td class="cell" id="1"></td>
+            <td class="cell" id="2"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="3"></td>
+            <td class="cell" id="4"></td>
+            <td class="cell" id="5"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="6"></td>
+            <td class="cell" id="7"></td>
+            <td class="cell" id="8"></td>
+        </tr>
+    </table>
+    
+    <div class="endgame">
+        <div class="text"></div>
     </div>
+    <button onClick="startGame()">Replay</button>
+
 </body>
 <script src="main.js"></script>
 
