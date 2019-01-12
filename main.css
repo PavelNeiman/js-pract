@@ -38,7 +38,8 @@ table tr td:last-child{
     display: none;
     width: 200px;
     top: 120px;
-    background-color: red;
+    background-color: orange;
+    opacity: 0.7;
     position: absolute;
     left: 50%;
     margin-left: -100px;
@@ -47,6 +48,6 @@ table tr td:last-child{
     border-radius: 20px;
     color: wheat;
     font-size: 2em;
-
+    
     
 }

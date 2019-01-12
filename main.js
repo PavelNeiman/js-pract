@@ -33,8 +33,10 @@ function startGame() {
 
 //получаем клик игрока
 function turnClick(square) {
-    turn(square.target.id, huPlayer);
-    //  console.log(square.target.id);
+	if (typeof origBoard[square.target.id] == 'number') {
+		turn(square.target.id, huPlayer)
+		if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
+	}
 }
 
 function turn(squareId, player) {
@@ -73,8 +75,35 @@ function gameOver(gameWon) {
     }
     for (var i = 0; i < cells.length; i++) {
         cells[i].removeEventListener('click', turnClick, false);
+        
     }
+
+    declareWinner(gameWon.player == huPlayer ? "Красавчик" : "Писос! Ты проиграл ИИ, который я написал за 20 минут((")
+}
+
+function declareWinner(who){
+    document.querySelector('.endgame').style.display = 'block';
+    document.querySelector('.text').innerText = who;
+}
+
+function emptySquares(){
+    return origBoard.filter(s => typeof s == 'number');
+}
+
+// ai spot's
+function bestSpot(){
+    return emptySquares()[0];
 }
 
 
-
+function checkTie(){
+    if (emptySquares().length == 0){
+        for(var i = 0; i < cells.length; i++){
+            cells[i].style.backgroundColor = 'yellow';
+            cells[i].removeEventListener('click'. turnClick, false)
+        }
+        declareWinner("Tie Game!")
+        return true;
+    }
+    return false;
+}
