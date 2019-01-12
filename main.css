@@ -39,7 +39,7 @@ table tr td:last-child{
     width: 200px;
     top: 120px;
     background-color: orange;
-    opacity: 0.7;
+    opacity: 0.95;
     position: absolute;
     left: 50%;
     margin-left: -100px;
@@ -51,3 +51,14 @@ table tr td:last-child{
     
     
 }
+
+.tryAgain{
+    padding: 5px 20px;
+    background-color:powderblue;
+    border-radius: 30px;
+}
+
+td:hover{
+    background-color:gray;
+}
+
